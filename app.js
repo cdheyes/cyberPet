@@ -1,11 +1,14 @@
 
-const foodButton = document.getElementById("feed button");
+const petUpdate = document.getElementById('petUpdate');
+
+const foodButton = document.getElementById("feedButton");
 const drinkButton = document.getElementById("drink button");
 const playButton = document.getElementById("play button");
 
 
 // button id listeners
 foodButton.addEventListener("click", (event) => {
+  petUpdate.innerHTML = ` wants scooby snacks... FEED ME!`;
   newDog.eat();
   newDog.checkHunger();
 });
@@ -62,7 +65,8 @@ play(){
 checkHunger(){
   if (this._hunger >= 90) {
     // Link to DOM element ID here
-    console.log(`${this._name} wants scooby snacks... FEED ME!`);
+    petUpdate.innerHTML = `${this._name} wants scooby snacks... FEED ME!`;
+    // console.log(`${this._name} wants scooby snacks... FEED ME!`);
   } else if(this._hunger <= 10) {
     // Link to DOM element ID here
     console.log(`${this._name} is going to burst! No more food`);
@@ -104,7 +108,7 @@ checkHappy(){
 const newDog = new Animal("Layla");
 
 
-console.log(newDog.name);
-console.log(newDog.hunger);
-console.log(newDog.thirst);
-console.log(newDog.happy);
+// console.log(newDog.name);
+// console.log(newDog.hunger);
+// console.log(newDog.thirst);
+// console.log(newDog.happy);
