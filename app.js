@@ -1,0 +1,110 @@
+
+const foodButton = document.getElementById("feed button");
+const drinkButton = document.getElementById("drink button");
+const playButton = document.getElementById("play button");
+
+
+// button id listeners
+foodButton.addEventListener("click", (event) => {
+  newDog.eat();
+  newDog.checkHunger();
+});
+
+drinkButton.addEventListener("click", (event) => {
+  newDog.drink();
+  newDog.checkThirst();
+});
+
+playButton.addEventListener("click", (event) => {
+  newDog.play();
+  newDog.checkHappy();
+});
+
+
+//universal pet class
+class Animal {
+  constructor(name){
+  this._name = name;
+  this._hunger=100;
+  this._thirst=50;
+  this._happy=50;
+}
+get name(){
+  return this._name;
+}
+get hunger(){
+  return this._hunger;
+}
+get thirst(){
+  return this._thirst;
+}
+get happy(){
+  return this._happy;
+}
+
+eat(){
+  this._hunger-=10;
+  this._thirst+=5;
+  this._happy+=5
+}
+
+drink(){
+  this._thirst-=10;
+  this._hunger+=5;
+  this._happy+=5;
+}
+play(){
+  this._happy-=10;
+  this._hunger+=5;
+  this._thirst=+5;
+}
+
+checkHunger(){
+  if (this._hunger >= 90) {
+    // Link to DOM element ID here
+    console.log(`${this._name} wants scooby snacks... FEED ME!`);
+  } else if(this._hunger <= 10) {
+    // Link to DOM element ID here
+    console.log(`${this._name} is going to burst! No more food`);
+  } else {
+    // Link to DOM element ID here - maybe swap dog image
+    console.log(`${this._hunger} hunger level`) ;
+  };
+};
+
+checkThirst(){
+  if (this._thirst >= 90) {
+    // Link to DOM element ID here
+    console.log(`${this._name} is SO thirsty, drinkies please!`);
+  } else if(this._thirst <= 10) {
+    // Link to DOM element ID here
+    console.log(`${this._name} is not thirsty anymore`);
+  } else {
+    // Link to DOM element ID here - maybe swap dog image
+    console.log(`${this._thirst} thirst level`) ;
+  };
+};
+
+checkHappy(){
+  if (this._happy >= 90) {
+    // Link to DOM element ID here
+    console.log(`${this._name} is bored. I need to play!`);
+  } else if(this._happy <= 10) {
+    // Link to DOM element ID here
+    console.log(`${this._name} is tired out. I need to rest`);
+  } else {
+    // Link to DOM element ID here - maybe swap dog image
+    console.log(`${this._happy} play level`) ;
+  };
+};
+
+};
+
+
+const newDog = new Animal("Layla");
+
+
+console.log(newDog.name);
+console.log(newDog.hunger);
+console.log(newDog.thirst);
+console.log(newDog.happy);
