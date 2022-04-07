@@ -1,6 +1,8 @@
 
 const petUpdate = document.getElementById('petUpdate');
-const petScore = document.getElementById('petScore');
+const petHunger = document.getElementById('petHunger');
+const petThirst = document.getElementById('petThirst');
+const petHappy = document.getElementById('petHappy');
 
 const foodButton = document.getElementById("feedButton");
 const drinkButton = document.getElementById("drinkButton");
@@ -9,7 +11,6 @@ const playButton = document.getElementById("playButton");
 
 // button id listeners
 foodButton.addEventListener("click", (event) => {
-  petUpdate.innerHTML = ` wants scooby snacks... FEED ME!`;
   newDog.eat();
   newDog.checkHunger();
   newDog.displayScore();
@@ -67,8 +68,11 @@ play(){
   this._thirst += 5;
 }
 
+
 displayScore(){
-  petScore.innerHTML = `Hunger ${this._hunger}. Thirst ${this._thirst}. Happy ${this._happy}`;
+  petHunger.innerHTML = `Hunger ${this._hunger}.`; 
+  petThirst.innerHTML = `Thirst ${this._thirst}.`; 
+  petHappy.innerHTML = `Happy ${this._happy}`;
 }
 
 checkHunger(){
