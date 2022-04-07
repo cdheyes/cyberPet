@@ -51,29 +51,43 @@ get happy(){
 }
 
 eat(){
+  // force scores to stay in range?
+  if (this._hunger <= 0){
+  this._hunger = 0;
+  } else if (this._hunger >= 100){
+    this._hunger = 100;
+  } else {
   this._hunger -= 10;
   this._thirst += 5;
   this._happy += 5;
+  };
 }
 
 drink(){
+  if (this._thirst <= 0 || this._thirst > 100){
+  // out of range do nothing
+  } else {
   this._thirst -= 10;
   this._hunger += 5;
   this._happy += 5;
+  };
 }
 
 play(){
+  if (this._happy <= 0 || this._happy > 100){
+  // out of range do nothing
+  } else {
   this._happy -= 10;
   this._hunger += 5;
   this._thirst += 5;
+  };
 }
 
-
-displayScore(){
-  petHunger.innerHTML = `Hunger ${this._hunger}.`; 
-  petThirst.innerHTML = `Thirst ${this._thirst}.`; 
+displayScore() {
+  petHunger.innerHTML = `Hungry ${this._hunger}`;
+  petThirst.innerHTML = `Thirst ${this._thirst}`; 
   petHappy.innerHTML = `Happy ${this._happy}`;
-}
+};
 
 checkHunger(){
   if (this._hunger >= 90) {
@@ -82,7 +96,7 @@ checkHunger(){
     petUpdate.innerHTML = `${this._name} is going to burst! No more food`;
   } else {
     // Link to DOM element ID here - maybe swap dog image
-    petUpdate.innerHTML = `${this._hunger} hunger level`;
+    petUpdate.innerHTML = `mmm tasty!`;
   };
 };
 
@@ -93,7 +107,7 @@ checkThirst(){
     petUpdate.innerHTML = `${this._name} is not thirsty anymore`;
   } else {
     // Link to DOM element ID here - maybe swap dog image
-    petUpdate.innerHTML = `${this._thirst} thirst level`;
+    petUpdate.innerHTML = `slurp!`;
   };
 };
 
@@ -104,7 +118,7 @@ checkHappy(){
     petUpdate.innerHTML = `${this._name} is tired out. I need to rest`;
   } else {
     // Link to DOM element ID here - maybe swap dog image
-    petUpdate.innerHTML = `${this._happy} happy level`;
+    petUpdate.innerHTML = `woof! woof!`;
   };
 };
 
