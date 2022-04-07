@@ -1,0 +1,61 @@
+body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgb(231, 226, 226);
+}
+
+header{
+    display: flex;
+    font-size: 50px;
+    font-family:'Courier New', Courier, monospace;
+    background-color: rgb(181, 49, 243); 
+    align-items: center;  
+    border-radius: 100%;
+    width: 50%;
+    padding-left: 80px;
+    max-height: 150px;
+   
+}
+    
+.petName{
+    display: flex;
+    font-size: 30px;
+    background-color: rgb(240, 238, 238);
+    align-items: center;
+    border-style: double;
+    border-radius: 10%;
+    max-height: 30px;
+    padding:15px;
+    margin: 10px;
+    
+
+}
+
+
+#hero{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgb(187, 27, 187);
+    border-radius: 10px;
+    border-style: solid;
+    border-top-left-radius: 70px;
+    border-top-right-radius: 70px;
+    width: 500px;
+    height: 500px; 
+}
+
+.stats{
+    width: 60%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.petButtons{
+   margin: 25px;
+   transform: scale(1.5);
+   background-color: rgb(255, 255, 255);
+   border-radius: 40%;
+}
+
